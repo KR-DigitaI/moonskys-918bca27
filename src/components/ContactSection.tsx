@@ -28,7 +28,7 @@ const ContactSection = () => {
                 { icon: MapPin, text: "2216 E Pine St, Tulsa, OK 74110" },
                 { icon: Phone, text: "+1 (918) 599-8530" },
                 { icon: Clock, text: "Open daily · Closes at 3:30 PM" },
-                { icon: Facebook, text: "facebook.com/moonskys" },
+                { icon: Facebook, text: "facebook.com/moonskys", href: "https://www.facebook.com/moonskys" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
