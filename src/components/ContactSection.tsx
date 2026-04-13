@@ -25,16 +25,22 @@ const ContactSection = () => {
             <h3 className="font-heading text-2xl font-semibold text-foreground">Visit Our Shop</h3>
             <div className="space-y-6">
               {[
-                { icon: MapPin, text: "2216 E Pine St, Tulsa, OK 74110" },
-                { icon: Phone, text: "+1 (918) 599-8530" },
+                { icon: MapPin, text: "2216 E Pine St, Tulsa, OK 74110", href: "https://www.google.com/maps/place/2216+E+Pine+St,+Tulsa,+OK+74110" },
+                { icon: Phone, text: "+1 (918) 599-8530", href: "tel:+19185998530" },
                 { icon: Clock, text: "Open daily · Closes at 3:30 PM" },
-                { icon: Facebook, text: "facebook.com/moonskys" },
+                { icon: Facebook, text: "facebook.com/moonskys", href: "https://www.facebook.com/moonskys" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                     <item.icon size={20} />
                   </div>
-                  <span className="text-muted-foreground">{item.text}</span>
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span className="text-muted-foreground">{item.text}</span>
+                  )}
                 </div>
               ))}
             </div>

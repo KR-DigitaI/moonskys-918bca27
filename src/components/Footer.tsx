@@ -13,8 +13,8 @@ const Footer = () => (
 
         <div className="flex gap-4">
           {[
-            { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-            { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+            { icon: Facebook, href: "https://www.facebook.com/moonskys", label: "Facebook" },
+            { icon: Instagram, href: "https://www.instagram.com/moonskys", label: "Instagram" },
             { icon: MapPin, href: "https://www.google.com/maps/place/2216+E+Pine+St,+Tulsa,+OK+74110", label: "Google Maps" },
           ].map((s) => (
             <a
