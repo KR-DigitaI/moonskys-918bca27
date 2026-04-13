@@ -15,7 +15,7 @@ const Footer = () => (
           {[
             { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
             { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-            { icon: MapPin, href: "https://maps.google.com", label: "Google Maps" },
+            { icon: MapPin, href: "https://www.google.com/maps/place/2216+E+Pine+St,+Tulsa,+OK+74110", label: "Google Maps" },
           ].map((s) => (
             <a
               key={s.label}
