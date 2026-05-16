@@ -50,15 +50,8 @@
   }
 
   body {
-    @apply text-foreground;
+    @apply bg-background text-foreground;
     font-family: var(--font-body);
-    background-color: hsl(var(--background));
-    background-image:
-      radial-gradient(circle at 20% 15%, hsl(30 80% 50% / 0.10) 0%, transparent 45%),
-      radial-gradient(circle at 80% 80%, hsl(15 70% 45% / 0.10) 0%, transparent 45%),
-      radial-gradient(hsl(25 40% 70% / 0.18) 1.2px, transparent 1.2px);
-    background-size: auto, auto, 22px 22px;
-    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {

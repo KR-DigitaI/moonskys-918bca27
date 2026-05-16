@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapPin, Phone, Clock, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import coffeeImg from "@/assets/coffee-donut.jpg";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -13,16 +14,27 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={coffeeImg}
+          alt="Coffee and donut on a wooden table"
+          className="w-full h-full object-cover"
+          loading="lazy"
+          width={1600}
+          height={1000}
+        />
+        <div className="absolute inset-0 bg-foreground/75" />
+      </div>
       <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center text-foreground mb-16">
+        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center text-primary-foreground mb-16">
           Get In Touch
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Info */}
           <div className="space-y-8">
-            <h3 className="font-heading text-2xl font-semibold text-foreground">Visit Our Shop</h3>
+            <h3 className="font-heading text-2xl font-semibold text-primary-foreground">Visit Our Shop</h3>
             <div className="space-y-6">
               {[
                 { icon: MapPin, text: "2216 E Pine St, Tulsa, OK 74110", href: "https://www.google.com/maps/place/2216+E+Pine+St,+Tulsa,+OK+74110" },
@@ -31,21 +43,21 @@ const ContactSection = () => {
                 { icon: Facebook, text: "facebook.com/moonskys", href: "https://www.facebook.com/moonskys" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 text-primary-foreground flex items-center justify-center flex-shrink-0">
                     <item.icon size={20} />
                   </div>
                   {item.href ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/90 hover:text-primary transition-colors">
                       {item.text}
                     </a>
                   ) : (
-                    <span className="text-muted-foreground">{item.text}</span>
+                    <span className="text-primary-foreground/90">{item.text}</span>
                   )}
                 </div>
               ))}
             </div>
 
-            <div className="bg-card rounded-xl p-6 shadow-warm">
+            <div className="bg-card/95 backdrop-blur rounded-xl p-6 shadow-warm-lg">
               <p className="text-sm text-muted-foreground italic">
                 "Already addicted to their new menu! Breakfast Tacos!! 🌮🌮🌮" — Happy Customer
               </p>
@@ -53,7 +65,7 @@ const ContactSection = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="bg-card rounded-xl p-8 shadow-warm space-y-6">
+          <form onSubmit={handleSubmit} className="bg-card/95 backdrop-blur rounded-xl p-8 shadow-warm-lg space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Name</label>
               <input

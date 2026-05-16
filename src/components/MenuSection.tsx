@@ -1,4 +1,5 @@
 import { Croissant, Beef, Coffee, Cookie, Salad, IceCream, Sandwich, CupSoda } from "lucide-react";
+import foodImg from "@/assets/food-spread.jpg";
 
 type MenuItem = { name: string; desc?: string; price: string };
 type MenuCategory = { icon: typeof Coffee; title: string; items: MenuItem[] };
@@ -85,12 +86,23 @@ const menu: MenuCategory[] = [
 ];
 
 const MenuSection = () => (
-  <section id="menu" className="py-24 bg-card">
+  <section id="menu" className="relative py-24 overflow-hidden">
+    <div className="absolute inset-0 -z-10">
+      <img
+        src={foodImg}
+        alt="Tacos, po'boys, fries and donuts spread"
+        className="w-full h-full object-cover"
+        loading="lazy"
+        width={1600}
+        height={1000}
+      />
+      <div className="absolute inset-0 bg-foreground/70" />
+    </div>
     <div className="container mx-auto px-4 max-w-6xl">
-      <h2 className="font-heading text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
+      <h2 className="font-heading text-4xl md:text-5xl font-bold text-center text-primary-foreground mb-4">
         Our Full Menu
       </h2>
-      <p className="text-center text-muted-foreground text-lg mb-16">
+      <p className="text-center text-primary-foreground/80 text-lg mb-16">
         Something delicious for everyone — $10–$20 per person
       </p>
 
@@ -98,7 +110,7 @@ const MenuSection = () => (
         {menu.map((cat) => (
           <div
             key={cat.title}
-            className="bg-background rounded-xl p-6 shadow-warm hover:shadow-warm-lg transition-all duration-300"
+            className="bg-background/95 backdrop-blur rounded-xl p-6 shadow-warm-lg transition-all duration-300"
           >
             <div className="flex items-center gap-3 mb-5 pb-4 border-b border-border">
               <div className="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center">
@@ -124,7 +136,7 @@ const MenuSection = () => (
         ))}
       </div>
 
-      <p className="text-center text-muted-foreground text-sm mt-10">
+      <p className="text-center text-primary-foreground/80 text-sm mt-10">
         Prices may vary. Ask in-store for daily specials and seasonal items.
       </p>
     </div>
